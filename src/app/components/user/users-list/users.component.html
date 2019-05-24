@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="col-12 col-md-3 ">
+
+    <div class="list-group">
+
+      <span class="mt-3 mb-3">Users List</span>
+
+      <a *ngFor="let item of users | slice : startPage:paginationLimit"
+       class=" list-group-item list-group-item-action "
+        [routerLink]="['/users',item.id]" [class.active]="userId === item.id">
+        {{ item.login | titlecase}}
+      </a>
+
+      <button *ngIf="paginationLimit < users.length" (click)="showMoreItems() " class="btn btn-success">
+        Show More ...
+      </button>
+
+      <button *ngIf="paginationLimit > 10" (click)="showLessItems()" class="btn btn-success">
+        Show Less ...
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="col-12 col-md-9  ">
+
+    <app-user-details></app-user-details>
+
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="body profile">
+
+    <div class="userInfo">
+        <span class="mt-4">User Info </span>
+    </div>
+
+    <img [src]="user?.avatar_url" class="d-block m-auto">
+    <!-- <img *ngIf="!user?.avatar_url" [src]="defaultAvatar" class="d-block m-auto"> -->
+
+    <hr>
+
+    <div class="row">
+        <h6 class="col-md-3">Name :</h6>
+        <p class=" col-md-7  "> {{user?.name | titlecase}}</p>
+        <span class="col-12 col-md-2 text-md-right userId font-weight-bold"> {{user?.id}}</span>
+    </div>
+
+    <hr>
+    <div class="row">
+        <h6 class="col-md-3">Bio :</h6>
+        <p class=" col-md-7  ">
+            {{ user?.bio }}
+        </p>
+    </div>
+
+    <div class="row">
+        <h6 class="col-md-3">Email :</h6>
+        <p class=" col-md-7 text-justify ">
+            {{ user?.email }}
+        </p>
+    </div>
+
+    <div class="row">
+        <h6 class="col-md-3">Created at :</h6>
+        <p class=" col-md-7  ">
+            {{ user?.created_at }}
+        </p>
+    </div>
+
+</div>

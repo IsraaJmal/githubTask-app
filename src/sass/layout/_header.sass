@@ -1,0 +1,33 @@
+$black : #24292e
+  
+.navbar
+    background-color: $black
+
+
+    .navbar-brand
+        img
+            width: 32px
+           
+    .navbar-nav
+        li
+            position: relative
+            padding: 0px 20px
+            &::after
+                content: '|'
+                color: #eee
+                position: absolute
+                top: 5px
+                right: 100%
+            &:first-of-type::after
+                content: none
+
+@media (max-width: 767px)
+    .navbar 
+        .navbar-nav
+             li
+                 &::after
+                     content: none
+
+
+
+                          

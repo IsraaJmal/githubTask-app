@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark ">
+
+  <a class="navbar-brand" [routerLink]="['/']"> <img src="assets/githublogo.png "> <span class="ml-3"> GitHub Users</span></a>
+
+  <button (click)="toggleNavBar()" class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [class.show]="isCollapse" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto float-right">
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/']" routerLinkActive="active current"
+          [routerLinkActiveOptions]="{exact : true}" (click)="setTitle( 'GitHub | Home')" >Home </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/users']" routerLinkActive="active current" (click)="setTitle( 'GitHub | Users')">Users
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active current" (click)="setTitle( 'GitHub | About')">About </a>
+      </li>
+
+
+
+    </ul>
+
+  </div>
+</nav>
